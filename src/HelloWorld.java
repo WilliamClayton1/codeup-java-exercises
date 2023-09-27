@@ -32,5 +32,12 @@ public class HelloWorld {
         int y = 4;
 
         y *= x;
+
+        x = 10;
+
+        y = 2;
+
+        x /= y;
+        y -= x;
     }
 }
