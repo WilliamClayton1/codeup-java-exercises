@@ -57,6 +57,5 @@ public class ConsoleExercises {
         System.out.println("The area of this room is: " + area);
         System.out.println("The perimeter of the room is: " + perimeter);
 
-
     }
 }
