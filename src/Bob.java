@@ -22,7 +22,6 @@ public class Bob {
             }
 
             System.out.println("Do you wanna keep talking? (Yes/No)");
-            scanner.nextLine();
             String userAnswer = scanner.nextLine();
 
             conversation = userAnswer.equalsIgnoreCase("yes");
