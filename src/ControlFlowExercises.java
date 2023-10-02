@@ -58,20 +58,68 @@ public class ControlFlowExercises {
                 System.out.print(j + " ");
             }
         }
-
         System.out.println("\n");
 
         //table of power
+        int y = 0;
+        do {
+
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("What number would you like to go up to?");
+
+            int userInput = scanner.nextInt();
+
+            System.out.println("Here is your table!");
+            System.out.println("number" + " | " + "squared" + " | " + "cubed" );
+            System.out.println("------" + " | " + "-------" + " | " + "------");
+
+            for (int j = 1; j <= userInput; j++) {
+                System.out.printf("%6d | %7d | %5d%n", j, j * j, j * j * j);
+            }
+            y++;
+
+            System.out.println("Do you want top continue?");
+            String userSecondInput = scanner.next();
+
+            if (userSecondInput.equalsIgnoreCase("no")) {
+                break;
+            }
+        }
+        while (y < 10);
+
+
+        //grade convert
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("What number would you like to go up to?");
+        int n = 1;
+        do {
 
-        int userInput = scanner.nextInt();
+            System.out.println("What is your number grade?");
 
-        System.out.println("Here is your table!");
-//        System.out.println("\n");
-        System.out.println("number" + " | " + "squared" + " | " + "cubed" );
-        System.out.println("------" + " | " + "-------" + " | " + "------");
+            int userInput3 = scanner.nextInt();
+
+            if (userInput3 >= 88) {
+                System.out.println("A");
+            } else if (userInput3 >= 80) {
+                System.out.println("B");
+            }else if (userInput3 >= 67) {
+                System.out.println("C");
+            }else if (userInput3 >= 60) {
+                System.out.println("D");
+            }else if (userInput3 >= 0) {
+                System.out.println("F");
+            }
+
+            n++;
+            System.out.println("Do you want top continue?");
+            String userSecondInput = scanner.next();
+
+            if (userSecondInput.equalsIgnoreCase("no")) {
+                break;
+            }
+        }
+        while (n < 10);
 
 
     }
