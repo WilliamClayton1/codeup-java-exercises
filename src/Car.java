@@ -13,7 +13,21 @@ public class Car {
             System.out.printf("%s %s Honks its horn", make, model);
         }
 
-        //Static - an instance of a class (an object) can have individual and unique values to their fields. Non-unique fields are flagged with the 'static' keyword.
+        //have access to the same package
+        protected String ownerName;
+
+        //only have access to the class
+        private String vinNum;
+
+    public String getVinNum() {
+        return this.vinNum;
+    }
+
+    public void setVinNum(String vinNum) {
+        this.vinNum = vinNum;
+    }
+
+    //Static - an instance of a class (an object) can have individual and unique values to their fields. Non-unique fields are flagged with the 'static' keyword.
 
     //Let's look at the Math object
     double piExample = Math.PI; //Command click 'Math' to see the entire object, 'PI' to see the property of the object
@@ -29,11 +43,36 @@ public class Car {
 
         //Third example: car constructor method that auto-increments static carInventoryCount when each car is made
 
+        public Car () {
+            carInventoryCount++;
+        }
+
         //Fourth example: overloading constructor to allow for missing model / year
+
+        public Car (String carMake, int carYear) {
+//            make = carMake;
+//            year = carYear;
+//            model = "unknown";
+            this(carMake, "unassigned", carYear);
+        }
+
+        public Car (String carMake, String carModel, int carYear) {
+            make = carMake;
+            year = carYear;
+            model = carModel;
+        }
+
+        public Car (String carMake, String carModel) {
+            this(carMake, carModel, 0);
+        }
 
         //This - think of it as saying ME, MYSELF, THIS object.
 
         //Fifth example: logCarInfo()
+
+    public void logCarInfo () {
+        System.out.printf("This current is a %s make of a %s model of a %d%n", this.make, this.model, this.year);
+    }
 
         //Visibility - let's set up a private String that is carOwner and set up a small application running class called dealershipApp to see if we can access info in the other class.
 
@@ -50,17 +89,28 @@ public class Car {
 
         System.out.printf("Here some information about my car %s %s %d%n", willsCar.make, willsCar.model, willsCar.year);
 
-
-        Car.carInventoryCount = 0;
-
-        carInventoryCount++;
+        System.out.println("Car inventory is: " + carInventoryCount);
 
         System.out.println("Car inventory is: " + carInventoryCount);
 
-        carInventoryCount++;
+        Car mysteryCar = new Car("suzuki", 2001);
 
-        System.out.println("Car inventory is: " + carInventoryCount);
+        System.out.println(mysteryCar.make);
+        System.out.println(mysteryCar.year);
 
+        Car gonzoCar = new Car("Toyota", "Camry", 2016);
 
+        System.out.println(gonzoCar.make);
+        System.out.println(gonzoCar.model);
+        System.out.println(gonzoCar.year);
+
+        willsCar.logCarInfo();
+        gonzoCar.logCarInfo();
+
+        //have access in the same package
+        gonzoCar.ownerName = "Gonzalo";
+
+        //have access in the same class
+        gonzoCar.vinNum = "1234567";
     }
 }
