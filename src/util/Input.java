@@ -65,11 +65,12 @@ public class Input {
         return getDouble(min, max);
     }
 
-    public void getDouble() {
+    public double getDouble() {
         System.out.println("Enter any decimal number you'd like.");
         double userInput = scanner.nextDouble();
 
         System.out.println(userInput);
+        return userInput;
     }
 
     public static void main (String[] args) {
