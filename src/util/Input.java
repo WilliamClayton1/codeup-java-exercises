@@ -51,9 +51,9 @@ public class Input {
     }
 
     public double getDouble(double min, double max) {
-        System.out.printf("Enter a number between %f and %f.%n", min, max);
+        System.out.printf("Enter a number between %.2f and %.2f.%n", min, max);
 
-        int userInput = scanner.nextInt();
+        double userInput = scanner.nextDouble();
 
         if (userInput >= min && userInput <= max) {
 
@@ -66,8 +66,9 @@ public class Input {
     }
 
     public void getDouble() {
-        System.out.println("Enter any number you'd like.");
-        int userInput = scanner.nextInt();
+        System.out.println("Enter any decimal number you'd like.");
+        double userInput = scanner.nextDouble();
+
         System.out.println(userInput);
     }
 
@@ -77,7 +78,8 @@ public class Input {
 //        user.yesNo();
 //        user.getInt(1,20);
 //        user.getInt();
-        user.getDouble(12.05, 50.02);
+        user.getDouble();
+
     }
 
 }
