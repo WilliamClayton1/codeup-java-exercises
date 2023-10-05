@@ -2,14 +2,11 @@ import java.util.Arrays;
 
 public class ArraysExercises {
 
-    public static void addPerson(Person[] personObj, Person newPerson) {
-
+    public static Person[] addPerson(Person[] personObj, Person newPerson) {
         int length = personObj.length+1;
         Person[] peopleArray = Arrays.copyOf(personObj, length);
-        //add the person to the people array
-        for (Person thisPerson : peopleArray) {
-            System.out.println(thisPerson);
-        }
+        peopleArray[length - 1] = newPerson;
+        return peopleArray;
     }
 
     public static void main (String[] args) {
@@ -28,13 +25,9 @@ public class ArraysExercises {
         people[1] = person2;
         people[2] = person3;
 
-//        int[] array = Arrays.copyOf(numbers, 6);
-//
-//        for (int number : array) {
-//            System.out.println(number);
-//        }
-
-        addPerson(people, person4);
-
+        Person[] people2 = addPerson(people, person4);
+        for (Person person : people2) {
+            System.out.println(person.getName());
+        }
     }
 }
