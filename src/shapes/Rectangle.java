@@ -11,11 +11,11 @@ public class Rectangle {
         width = newWidth;
     }
 
-    public int getArea(int length, int width){
+    public int getArea(){
         return length * width;
     }
 
-    public int getPerimeter(int length, int width) {
+    public int getPerimeter() {
         return 2 * length + 2 * width;
     }
 }
