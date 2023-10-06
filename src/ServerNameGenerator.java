@@ -1,6 +1,6 @@
 public class ServerNameGenerator {
 
-    public static int getRandom(int max){ return (int) (Math.random()*max); }
+    public static int getRandom(int max){return (int) (Math.random()*max); }
 
     public static String getRandomElement(String[] elementArray){
         int randomNum = getRandom(10);

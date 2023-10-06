@@ -10,7 +10,7 @@ public class Input {
     }
 
     public String getString () {
-        System.out.println("Type something: ");
+        System.out.println("Enter a movie title: ");
         String userInput = scanner.nextLine();
         System.out.println(userInput);
         return userInput;
@@ -44,10 +44,9 @@ public class Input {
         return getInt(min, max);
     }
 
-    public void getInt() {
-        System.out.println("Enter any number you'd like.");
-        int userInput = scanner.nextInt();
-        System.out.println(userInput);
+    public int getInt() {
+        System.out.printf("Enter your choice: %n");
+        return scanner.nextInt();
     }
 
     public double getDouble(double min, double max) {
