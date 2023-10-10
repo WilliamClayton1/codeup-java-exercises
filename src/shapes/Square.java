@@ -1,19 +1,19 @@
 package shapes;
 
-class Square extends Rectangle {
-
-    //constructor that set the length and width from the parent element
-//    public Square(int side) {
-//        super(side,side);
-//    }
-//
-//    public int getArea(int side){
-//        return side * side;
-//    }
-//
-//    public int getPerimeter(int side) {
-//        return 4 * side;
-//    }
+class Square extends Quadrilateral {
 
 
+    public Square(double newLength, double newWidth) {
+        super(newLength, newWidth);
+    }
+
+    @Override
+    public double getPerimeter() {
+        return 0;
+    }
+
+    @Override
+    public double getArea() {
+        return 0;
+    }
 }

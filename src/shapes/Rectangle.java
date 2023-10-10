@@ -1,21 +1,19 @@
 package shapes;
 
-public class Rectangle {
+public class Rectangle extends Quadrilateral implements Measurable{
 
-//    protected int length;
-//
-//    protected  int width;
-//
-//    public Rectangle (int newLength, int newWidth) {
-//        length = newLength;
-//        width = newWidth;
-//    }
-//
-//    public int getArea(){
-//        return length * width;
-//    }
-//
-//    public int getPerimeter() {
-//        return 2 * length + 2 * width;
+
+    public Rectangle(double newLength, double newWidth) {
+        super(newLength, newWidth);
+    }
+
+    @Override
+    public double getPerimeter() {
+        return 2 * length + 2 * width;
+    }
+
+    @Override
+    public double getArea() {
+        return length * width;
     }
 }
