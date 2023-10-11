@@ -17,7 +17,7 @@ public class Input {
     }
 
     public void yesNo() {
-        System.out.println("Enter a yes or no answer");
+        System.out.println("Would you like to continue?");
         String answer = scanner.nextLine();
 
         if (answer.contains("y") || answer.contains("Y")) {
