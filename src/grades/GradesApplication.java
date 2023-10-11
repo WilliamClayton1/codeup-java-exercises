@@ -40,18 +40,21 @@ public class GradesApplication {
         System.out.println("Welcome!");
         System.out.printf("%n");
         System.out.println("Here are the GitHub usernames of our students: ");
-        System.out.printf("%n");
+
 
 
         do {
+
+            System.out.printf("%n");
 
             for (String username : students.keySet()) {
                 System.out.printf("| %s | ", username);
             }
 
-            System.out.printf("What student would you like to see more information on?%n");
+            System.out.printf("%n%n");
 
-            System.out.printf("%n");
+            System.out.println("What student would you like to see more information on?");
+
             System.out.printf("%n");
 
             Scanner scanner = new Scanner(System.in);
@@ -65,6 +68,7 @@ public class GradesApplication {
                     if (userInput.equalsIgnoreCase(username)) {
 
                         System.out.println("Name: " + students.get(username).getName() + " - " + "GitHub Username: " + username);
+                        System.out.println("Grades: " + students.get(username).getGrade());
                         System.out.printf("Current Grade Average: %.0f %n", students.get(username).getGradeAverage());
 
                     }
@@ -98,5 +102,7 @@ public class GradesApplication {
         } while(studentInfo);
 
     }
+
+
 
 }
