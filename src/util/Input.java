@@ -10,7 +10,7 @@ public class Input {
     }
 
     public String getString () {
-        System.out.println("Enter a movie title: ");
+        System.out.println("Type something  ");
         String userInput = scanner.nextLine();
         System.out.println(userInput);
         return userInput;
@@ -45,8 +45,20 @@ public class Input {
     }
 
     public int getInt() {
+
+        int returnNumber = 0;
         System.out.printf("Enter your choice: %n");
-        return scanner.nextInt();
+        try {
+            String string = getString();
+            returnNumber = Integer.valueOf(string);
+
+        } catch (NumberFormatException e) {
+            System.out.println("Error");
+            e.printStackTrace();
+            returnNumber = getInt();//recursion
+        }
+
+        return returnNumber;
     }
 
     public double getDouble(double min, double max) {
@@ -65,11 +77,23 @@ public class Input {
     }
 
     public double getDouble() {
-        System.out.println("Enter any decimal number you'd like.");
-        double userInput = scanner.nextDouble();
 
-        System.out.println(userInput);
-        return userInput;
+        double returnNumber = 0;
+        System.out.println("Enter any decimal number you'd like.");
+
+        try {
+
+            String string2 = getString();
+            returnNumber = Double.valueOf(string2);
+
+        } catch (NumberFormatException e) {
+
+            System.out.println("Error");
+            e.printStackTrace();
+            returnNumber = getDouble();
+        }
+
+        return returnNumber;
     }
 
     public static void main (String[] args) {
