@@ -75,7 +75,7 @@ public class ControlFlowExercises {
             System.out.println("------" + " | " + "-------" + " | " + "------");
 
             for (int j = 1; j <= userInput; j++) {
-                System.out.printf("%6d | %7d | %5d%n", j, j * j, j * j * j);
+                System.out.printf("%-6d | %-7d | %-5d%n", j, j * j, j * j * j);
             }
             y++;
 

@@ -71,11 +71,17 @@ public class files_lecture {
         //different ways to print out information from the file
         System.out.printf("%n");
         System.out.println("Here is the information in the file: ");
-        System.out.println(Files.readAllLines(directoryAndFile));
-        System.out.println(Files.readString(directoryAndFile));
+//        System.out.println(Files.readAllLines(directoryAndFile));
+//        System.out.println(Files.readString(directoryAndFile));
 
         //stores the list into a variable and loops through that list
         List<String> lines = Files.readAllLines(directoryAndFile);
+
+        for (String line : lines) {
+
+            System.out.println(line);
+
+        }
 
 
     }
